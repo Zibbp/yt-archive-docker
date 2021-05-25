@@ -2,18 +2,17 @@
 
 Extremely simple docker container to run [TheFrenchGhosty's Archive Scripts](https://github.com/TheFrenchGhosty/TheFrenchGhostys-Ultimate-YouTube-DL-Scripts-Collection). The YouTube downloader, YT-DLP, checks for updates on each run.
 
-In the script mount folder three files need to be present.
+In the script mount folder some files need to be present.
 
-1. docker-entrypoint.sh (Needs to have execute permissions)
-2. The archive script (Channels.sh, Playlists.sh, Unique.sh)
-3. The source .txt file (Source - Channels.txt)
+1. The archive script (Channels.sh, Playlists.sh, Unique.sh)
+2. The source .txt file for the script (Source - Channels.sh)
 
 #### Docker Command
 
-Use host cron to run every night to auto start container.
+Use host cron to run every night to auto download.
 
 ```
-docker run -d --name=yt-archive-channels -v /home/user/yt-archive/channels:/opt/app/script zibbp/yt-archive
+docker run -d --name=yt-archive-channels -v /home/zippy/yt-archive/channels:/opt/app/script 197.100.1.236:5000/zibbp/yt-archive
 ```
 
 #### Edits to Ghost Archive Scripts
