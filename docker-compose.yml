@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  yt-archive:
+    container_name: yt-archive-channels
+    image: zibbp/yt-archive:latest
+    volumes:
+      - /home/user/yt-archive/channels:/opt/app/script
