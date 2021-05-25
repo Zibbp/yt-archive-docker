@@ -12,7 +12,7 @@ In the script mount folder some files need to be present.
 Use host cron to run every night to auto download.
 
 ```
-docker run -d --name=yt-archive-channels -v /home/zippy/yt-archive/channels:/opt/app/script 197.100.1.236:5000/zibbp/yt-archive
+docker run -d --name=yt-archive-channels -v /home/user/yt-archive/channels:/opt/app/script zibbp/yt-archive
 ```
 
 #### Edits to Ghost Archive Scripts
