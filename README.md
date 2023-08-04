@@ -6,12 +6,6 @@ Utilizes [TheFrenchGhosty](https://github.com/TheFrenchGhosty/TheFrenchGhostys-U
 
 The containers either archive a Channel, Playlists, or Unique videos. The archiving process consists of downloading the video's metadata/information, description, comments, thumbnail, subtitles, and the highest quality version of that video.
 
-The videos are saved in the following format across all three run modes. This format is needed as it is used for importing the videos into Anvil.
-
-```
-/channel/channel-date-video_name/video_files*.mkv/json/webp
-```
-
 ### Information
 
 Three containers are created one for Channels, Playlists, and Unique videos. Each container runs the specified script located under /container-scripts. In each folder under /container-scripts is a source text file which is where YouTube urls are inserted for downloading.

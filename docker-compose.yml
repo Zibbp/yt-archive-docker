@@ -3,31 +3,31 @@ version: "2.1"
 services:
   yt-archive-channels:
     container_name: yt-archive-channels
-    image: registry.tycho.zibbp.net/zibbp/yt-archive-docker:latest
+    image: zibbp/yt-archive-docker:latest
     user: 1000:1000
     environment:
       - MODE=Channels
     volumes:
-      - /home/zibbp/docker/yt-archive/container-scripts:/opt/app/scripts
-      - /home/zibbp/docker/yt-archive/output-Channels:/opt/app/output
+      - /path/to/yt-archive/container-scripts:/opt/app/scripts
+      - /path/to/yt-archive/output-Channels:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
   yt-archive-playlists:
     container_name: yt-archive-playlists
-    image: registry.tycho.zibbp.net/zibbp/yt-archive-docker:latest
+    image: zibbp/yt-archive-docker:latest
     user: 1000:1000
     environment:
       - MODE=Playlists
     volumes:
-      - /home/zibbp/docker/yt-archive/container-scripts:/opt/app/scripts
-      - /home/zibbp/docker/yt-archive/output-Playlists:/opt/app/output
+      - /path/to/yt-archive/container-scripts:/opt/app/scripts
+      - /path/to/yt-archive/output-Playlists:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
   yt-archive-unique:
     container_name: yt-archive-unique
-    image: registry.tycho.zibbp.net/zibbp/yt-archive-docker:latest
+    image: zibbp/yt-archive-docker:latest
     user: 1000:1000
     environment:
       - MODE=Unique
     volumes:
-      - /home/zibbp/docker/yt-archive/container-scripts:/opt/app/scripts
-      - /home/zibbp/docker/yt-archive/output-Unique:/opt/app/output
+      - /path/to/yt-archive/container-scripts:/opt/app/scripts
+      - /path/to/yt-archive/output-Unique:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
