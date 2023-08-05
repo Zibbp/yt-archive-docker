@@ -10,7 +10,14 @@ The containers either archive a Channel, Playlists, or Unique videos. The archiv
 
 Three containers are created one for Channels, Playlists, and Unique videos. Each container runs the specified script located under /container-scripts. In each folder under /container-scripts is a source text file which is where YouTube urls are inserted for downloading.
 
-Once the videos are downloaded, a postprocess script is run which first runs the `detox` utility, removing all spaces and weird characters from the file paths. Next the archived videos are moved over to my NAS. Finally, after the videos are copied over the local files are deleted.
+Each container type (channels, playlists, and unique) needs two folders.
+
+- type-data
+- type-output
+
+The data folder for each type needs to contain `source.txt` file. In this file links to channels, playlists, and videos are placed. In the same data folder, yt-dlp will create an `archive.log` file which will store all downloaded video ids.
+
+The output folder is mounted to the host incase the files cannot be copied to the final destination. `yt-dlp` adds the video id to the `archive.log` as soon as it's downloaded. To prevent the offchance that the container restarts and looses all downlaoded videos, the folder is mounted to the host.
 
 ### Getting Started
 

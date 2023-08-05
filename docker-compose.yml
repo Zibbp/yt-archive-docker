@@ -8,8 +8,9 @@ services:
     environment:
       - MODE=Channels
     volumes:
-      - /path/to/yt-archive/container-scripts:/opt/app/scripts
-      - /path/to/yt-archive/output-Channels:/opt/app/output
+      - ./channels-data:/data
+      # output is bound to the host incase connection to nas is unavailable
+      - ./channels-output:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
   yt-archive-playlists:
     container_name: yt-archive-playlists
@@ -18,8 +19,8 @@ services:
     environment:
       - MODE=Playlists
     volumes:
-      - /path/to/yt-archive/container-scripts:/opt/app/scripts
-      - /path/to/yt-archive/output-Playlists:/opt/app/output
+      - ./playlists-data:/data
+      - ./playlists-output:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
   yt-archive-unique:
     container_name: yt-archive-unique
@@ -28,6 +29,6 @@ services:
     environment:
       - MODE=Unique
     volumes:
-      - /path/to/yt-archive/container-scripts:/opt/app/scripts
-      - /path/to/yt-archive/output-Unique:/opt/app/output
+      - ./unique-data:/data
+      - ./unique-output:/opt/app/output
       - /mnt/vault/videos/YouTube:/mnt/videos
